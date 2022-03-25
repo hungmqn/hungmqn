@@ -1,5 +1,8 @@
 ### Hi there 👋
 
+I am Hung, a software engineer.
+I'm hiding some good stuffs on [my website](https://hungmqn.com/). Have fun!
+
 <!--
 **hungmqn/hungmqn** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
