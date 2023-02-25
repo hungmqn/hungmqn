@@ -12,3 +12,30 @@ body {
   margin: 0;
   font-family: var(--dm-serif-display);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--cormorant-garamond);
+}
+
+.height-100dvh {
+  height: 100dvh;
+}
+
+.img-object-fit-cover {
+  width: 100%;
+  object-fit: cover;
+}
+
+.stacked-content {
+  display: grid;
+  place-items: center;
+}
+
+.stacked-content > * {
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+}

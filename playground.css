@@ -36,6 +36,10 @@ hr {
   font-family: var(--cormorant-garamond);
 }
 
+.img-object-fit {
+  object-fit: cover;
+}
+
 .flex {
   display: flex;
 }
