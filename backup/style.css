@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  /* Fonts */
+  --dm-serif-display: 'DM Serif Display';
+  --cormorant-garamond: 'Cormorant Garamond', serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--dm-serif-display);
+  height: 100dvh;
+  width: 100dvw;
+  background-color: #141414;
+  color: #fff;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--cormorant-garamond);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: grid;
+  place-items: center;
+  gap: 1em;
+  grid-auto-flow: column;
+  align-content: space-evenly;
+}
+
+#image-track {
+  display: flex;
+  gap: 4dvmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0, -50%);
+  user-select: none;
+}
+
+#image-track .image {
+  width: 40dvmin;
+  height: 56dvmin;
+  object-fit: cover;
+  object-position: right center;
+}
+
+@keyframes arrow-left-move {
+  0%,
+  100% {
+    left: 0;
+  }
+  50% {
+    left: 0.5%;
+  }
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  animation: arrow-left-move 1.5s infinite ease-in-out;
+}

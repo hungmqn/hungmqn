@@ -1,21 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('/assets/fonts/TeX-Gyre-Heros/texgyreheros-bold.otf');
+
+@font-face {
+  font-family: 'TeX Gyre Heros', sans-serif;
+  src: url('/assets/fonts/TeX-Gyre-Heros/texgyreheros-regular.otf')
+    format('opentype');
+}
+@font-face {
+  font-family: 'TeX Gyre Heros', sans-serif;
+  font-weight: bold;
+  src: url('/assets/fonts/TeX-Gyre-Heros/texgyreheros-bold.otf')
+    format('opentype');
+}
+@font-face {
+  font-family: 'TeX Gyre Heros', sans-serif;
+  font-style: italic;
+  src: url('/assets/fonts/TeX-Gyre-Heros/texgyreheros-italic.otf')
+    format('opentype');
+}
+@font-face {
+  font-family: 'TeX Gyre Heros', sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  src: url('/assets/fonts/TeX-Gyre-Heros/texgyreheros-bolditalic.otf')
+    format('opentype');
+}
 
 :root {
   /* Fonts */
-  --dm-serif-display: 'DM Serif Display';
-  --cormorant-garamond: 'Cormorant Garamond', serif;
+  --font-main: 'TeX Gyre Heros', sans-serif;
+
+  /* Colors */
+  --light-bg-color: #f5f5f7; /* rgb(245, 245, 247) */
+  --light-color-primary: #1d1d1f; /* rgb(29, 29, 31) */
+  --light-color-primary-hover: #000000; /* rgb(0, 0, 0) */
+  --light-color-secondary: #6e6e73; /* rgb(110, 110, 115) */
+  --light-color-link: #0066cc; /* rgb(0, 102, 204) */
+  --light-color-link-hover: #0026cc; /* rgb(0, 38, 204) */
+
+  --dark-bg-color: #141414; /* rgb(20, 20, 20) */
+  --dark-color-primary: #f5f5f7; /* rgb(245, 245, 247) */
+  --dark-color-primary-hover: #0077ed; /* rgb(0, 119, 237) */
+  --dark-color-secondary: #aaaaaa; /* rgb(170, 170, 170) */
+  --dark-color-link: #2997ff; /* rgb(41, 151, 255) */
+  --dark-color-link-hover: #2954ff; /* rgb(41, 84, 255) */
+
+  --bg-color: #141414; /* rgb(20, 20, 20) */
+  --color-primary: #f5f5f7; /* rgb(245, 245, 247) */
+  --color-primary-hover: #0077ed; /* rgb(0, 119, 237) */
+  --color-secondary: #aaaaaa; /* rgb(170, 170, 170) */
+  --color-link: #2997ff; /* rgb(41, 151, 255) */
+  --color-link-hover: #2954ff; /* rgb(41, 84, 255) */
+
+  --color-white: #ffffff;
+  --color-black: #000000;
 }
 
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--dm-serif-display);
-  height: 100dvh;
-  width: 100dvw;
-  background-color: #141414;
-  color: #fff;
-  overflow: hidden;
+  width: 100%;
+  font-family: var(--font-main);
+  font-size: 17px;
+  /* height: 100dvh; */
+  /* overflow: hidden; */
+  /* line-height: 1.47059; */
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  background-color: var(--bg-color);
+  color: var(--color-primary);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link);
+}
+a:hover {
+  text-decoration: underline;
 }
 
 h1,
@@ -23,54 +83,159 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--cormorant-garamond);
+  font-family: var(--font-main);
+  font-weight: bold;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+p {
+  display: block;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
-.navbar ul {
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(180%) blur(16px);
+}
+
+.navbar .navbar-content {
+  padding: 0 22px;
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .navbar .navbar-content {
+    max-width: 540px;
+  }
+  .container {
+    max-width: 540px;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .navbar .navbar-content {
+    max-width: 600px;
+  }
+  .container {
+    max-width: 600px;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .navbar .navbar-content {
+    max-width: 768px;
+  }
+  .container {
+    max-width: 768px;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .navbar .navbar-content {
+    max-width: 992px;
+  }
+  .container {
+    max-width: 992px;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .navbar .navbar-content {
+    max-width: 1200px;
+  }
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.navbar .navbar-content ul {
   list-style-type: none;
-  padding-left: 0;
-  display: grid;
-  place-items: center;
-  gap: 1em;
-  grid-auto-flow: column;
-  align-content: space-evenly;
-}
-
-#image-track {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
   display: flex;
-  gap: 4dvmin;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(0, -50%);
-  user-select: none;
+  justify-content: space-between;
 }
 
-#image-track .image {
-  width: 40dvmin;
-  height: 56dvmin;
-  object-fit: cover;
-  object-position: right center;
+.navbar .navbar-content ul li {
+  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes arrow-left-move {
-  0%,
-  100% {
-    left: 0;
-  }
-  50% {
-    left: 0.5%;
-  }
+.text-align-center {
+  text-align: center;
 }
 
-.arrow {
-  width: 10px;
-  height: 10px;
-  position: relative;
-  animation: arrow-left-move 1.5s infinite ease-in-out;
+.text-align-right {
+  text-align: right;
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+.color-black {
+  color: var(--color-black);
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.button {
+  background-color: var(--color-link);
+  color: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in;
+}
+.button:hover {
+  color: var(--color-link-hover);
+}
+
+.button-circle {
+  border-radius: 1000px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-item: center;
+}
+.shadow-1 {
+  box-shadow: 2px 2px 3px #999;
+}
+
+.welcome {
+  background-color: var(--color-black);
+  padding: 30px 0;
+}
+
+.hero {
+  width: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  object-fit: contain;
 }
