@@ -1,0 +1,18 @@
+body {
+  background-color: #efefef;
+  color: hsl(100, 50%, 50%);
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #efefef;
+    color: hsl(100, 50%, 50%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: hsl(100, 50%, 50%);
+    color: #fff;
+  }
+}

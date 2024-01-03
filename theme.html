@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <meta name="color-scheme" content="normal">
+  <link rel="stylesheet" href="/theme.css">
+
+</head>
+
+<body>
+  <button id="toggleColorScheme">Toggle</button>
+  <h1>Hello</h1>
+
+  <div>
+    <h2>Heading</h2>
+    <p>Paragraph</p>
+    <a href="#">Link</a>
+    <br />
+    <img src="assets/images/bg-cn-1.jpg" alt="Image" style="width: 300px; height: auto;">
+    <ul>
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+    <table>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+      </tr>
+      <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+      </tr>
+    </table>
+  </div>
+
+  <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br />
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br />
+    <button type="submit">Login</button>
+  </form>
+  <script>
+    function toggleTheme() {
+      const theme = document.querySelector('meta[name="color-scheme"]');
+      console.log(theme.content);
+      if (theme.content === 'light') {
+        theme.content = 'dark';
+      } else {
+        theme.content = 'light';
+      }
+    }
+
+    document.getElementById('toggleColorScheme').addEventListener('click', toggleTheme);
+  </script>
+</body>
+
+</html>
