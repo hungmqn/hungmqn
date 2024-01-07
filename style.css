@@ -1,59 +1,11 @@
-@import url('/assets/fonts/TeX-Gyre-Heros/texgyreheros-bold.otf');
-
-@font-face {
-  font-family: 'TeX Gyre Heros', sans-serif;
-  src: url('/assets/fonts/TeX-Gyre-Heros/texgyreheros-regular.otf')
-    format('opentype');
-}
-@font-face {
-  font-family: 'TeX Gyre Heros', sans-serif;
-  font-weight: bold;
-  src: url('/assets/fonts/TeX-Gyre-Heros/texgyreheros-bold.otf')
-    format('opentype');
-}
-@font-face {
-  font-family: 'TeX Gyre Heros', sans-serif;
-  font-style: italic;
-  src: url('/assets/fonts/TeX-Gyre-Heros/texgyreheros-italic.otf')
-    format('opentype');
-}
-@font-face {
-  font-family: 'TeX Gyre Heros', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  src: url('/assets/fonts/TeX-Gyre-Heros/texgyreheros-bolditalic.otf')
-    format('opentype');
-}
-
 :root {
   color-scheme: dark light;
 
   /* Fonts */
-  /* --font-main: 'TeX Gyre Heros', sans-serif; */
   --font-stack-didone: Didot, 'Bodoni MT', 'Noto Serif Display',
     'URW Palladio L', P052, Sylfaen, serif;
-
-  /* Colors */
-  --light-bg-color: #f5f5f7; /* rgb(245, 245, 247) */
-  --light-color-primary: #1d1d1f; /* rgb(29, 29, 31) */
-  --light-color-primary-hover: #000000; /* rgb(0, 0, 0) */
-  --light-color-secondary: #6e6e73; /* rgb(110, 110, 115) */
-  --light-color-link: #0066cc; /* rgb(0, 102, 204) */
-  --light-color-link-hover: #0026cc; /* rgb(0, 38, 204) */
-
-  --dark-bg-color: #141414; /* rgb(20, 20, 20) */
-  --dark-color-primary: #f5f5f7; /* rgb(245, 245, 247) */
-  --dark-color-primary-hover: #0077ed; /* rgb(0, 119, 237) */
-  --dark-color-secondary: #aaaaaa; /* rgb(170, 170, 170) */
-  --dark-color-link: #2997ff; /* rgb(41, 151, 255) */
-  --dark-color-link-hover: #2954ff; /* rgb(41, 84, 255) */
-
-  --bg-color: #141414; /* rgb(20, 20, 20) */
-  --color-primary: #f5f5f7; /* rgb(245, 245, 247) */
-  --color-primary-hover: #0077ed; /* rgb(0, 119, 237) */
-  --color-secondary: #aaaaaa; /* rgb(170, 170, 170) */
-  --color-link: #2997ff; /* rgb(41, 151, 255) */
-  --color-link-hover: #2954ff; /* rgb(41, 84, 255) */
+  --font-system-ui: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
   /* --color-dark: #211f1b;
   --color-light: #e9e8e2; */
@@ -69,7 +21,8 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--font-stack-didone);
+  font-family: var(--font-system-ui);
+  font-weight: 300;
   background-color: var(--color-light);
   color: var(--color-black);
 }
@@ -79,4 +32,16 @@ body {
     background-color: var(--color-dark);
     color: var(--color-white);
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-stack-didone);
+}
+
+.font-didone {
+  font-family: var(--font-stack-didone);
 }
