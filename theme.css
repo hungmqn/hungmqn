@@ -1,18 +1,104 @@
-body {
-  background-color: #efefef;
-  color: hsl(100, 50%, 50%);
+:root {
+  color-scheme: dark light;
+
+  /* Fonts */
+  --font-stack-didone: Didot, 'Bodoni MT', 'Noto Serif Display',
+    'URW Palladio L', P052, Sylfaen, serif;
+  --font-system-ui: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  --color-white: hsla(0, 0%, 100%, 1);
+  --color-black: hsla(0, 0%, 0%, 1);
+
+  --light-color-background: hsla(51, 3%, 92%, 1);
+  --light-color-primary: hsla(54, 6%, 33%, 1);
+  --light-color-secondary: hsla(48, 3%, 57%, 1);
+
+  --dark-color-background: hsla(40, 10%, 12%, 1);
+  --dark-color-primary: hsla(53, 11%, 45%, 1);
+  --dark-color-secondary: hsla(60, 5%, 37%, 1);
 }
 
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #efefef;
-    color: hsl(100, 50%, 50%);
-  }
+body {
+  background-color: var(--light-color-background);
+  color: var(--light-color-primary);
+  font-family: var(--font-system-ui);
+}
+
+.color-secondary {
+  color: var(--light-color-secondary);
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: hsl(100, 50%, 50%);
-    color: #fff;
+    background-color: var(--dark-color-background);
+    color: var(--dark-color-primary);
   }
+  .color-secondary {
+    color: var(--dark-color-secondary);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-stack-didone);
+}
+
+img {
+  font-style: italic;
+  max-width: 100%;
+  shape-margin: 1rem;
+  height: auto;
+  vertical-align: middle;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@keyframes parallax {
+  to {
+    transform: translateY(calc(var(--parallax-speed) * 200px));
+  }
+}
+
+.parallax {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'stack';
+  min-height: 50vh;
+}
+
+.parallax > * {
+  grid-area: stack;
+  animation: parallax linear;
+  animation-timeline: scroll();
+  --parallax-speed: 1;
+}
+
+.parallax-background {
+  z-index: 0;
+  --parallax-speed: 1;
+}
+
+.parallax-foreground {
+  text-shadow: 0 2px 1rem var(--color-white);
+  z-index: 1;
+  --parallax-speed: 4;
+}
+
+.parallax-up {
+  --parallax-speed: -4;
+}
+
+.mb-large {
+  margin-bottom: 100px;
 }
