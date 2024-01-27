@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website of Hung Nguyen, a software engineer." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/logo192.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <title>Hung Nguyen</title>
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="stylesheet" href="/assets/icons/icomoon/style.css">
+</head>
+
+<body>
+
+  <header class="container">
+    <h1>Hello</h1>
+    <h2 class="color-secondary">My name is Hung, nice to have you here!</h2>
+  </header>
+
+  <main class="container">
+
+    <p>This is a demo of text to canvas. I would help us prevent selection, copypasta, text crawler and more. However,
+      there is a
+      limitation when it require a fixed canvas size. I am thinking to get the canvas responsive.</p>
+
+    <textarea name="sampleText" id="sampleText" cols="30" rows="10" placeholder="Type something here..."
+      style="width: 100%;"></textarea>
+
+    <br />
+    You can see the canvas text here:
+    <br />
+    <div id="canvasContainer" style="width: 100%; height: auto;">
+      <canvas id="sampleCanvas" style="image-rendering: pixelated;">
+      </canvas>
+    </div>
+  </main>
+
+  <footer class="container text-center" id="footer">
+    <p class="text-center">hungmqn.com</p>
+    <a href="https://github.com/hungmqn" target="_blank" rel="noopener noreferrer"> <span
+        class="icon-github"></span></a>
+    <a href="https://www.linkedin.com/in/hungmqn" target="_blank" rel="noopener noreferrer"> <span
+        class="icon-linkedin2"></span></a>
+  </footer>
+
+  <script>
+
+    // Input
+    let text = '';
+    const textElement = document.getElementById('sampleText');
+
+    // Setup canvas
+    const canvasContainer = document.getElementById("canvasContainer");
+    const CANVAS_WIDTH = canvasContainer.offsetWidth;
+    // const CANVAS_HEIGHT = canvasContainer.offsetHeight;
+    const canvas = document.getElementById("sampleCanvas");
+    canvas.width = CANVAS_WIDTH;
+    // canvas.height = CANVAS_HEIGHT;
+    canvas.height = CANVAS_WIDTH / 2.5;
+    const ctx = canvas.getContext('2d');
+
+    ctx.font = `1rem system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol`;
+
+    const DARK_COLOR_PRIMARY = 'hsla(53, 11%, 45%, 1)';
+    const LIGHT_COLOR_PRIMARY = 'hsla(54, 6%, 33%, 1)';
+
+    ctx.fillStyle = LIGHT_COLOR_PRIMARY;
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // dark mode
+      ctx.fillStyle = DARK_COLOR_PRIMARY;
+    }
+
+
+    // Wrap text
+    const wrapText = (context, text, x, y, maxWidth, lineHeight) => {
+      const sentences = text.split("\n");
+      let numberOfLines = 0;
+
+      for (var ii = 0; ii < sentences.length; ii++) {
+
+        var line = "";
+        var words = sentences[ii].split(" ");
+
+        for (var n = 0; n < words.length; n++) {
+          var testLine = line + words[n] + " ";
+          var metrics = context.measureText(testLine);
+          var testWidth = metrics.width;
+
+          if (testWidth > maxWidth) {
+            context.fillText(line, x, y);
+            line = words[n] + " ";
+            y += lineHeight;
+            numberOfLines++;
+          }
+          else {
+            line = testLine;
+          }
+        }
+
+        context.fillText(line, x, y);
+        y += lineHeight;
+      }
+
+      return numberOfLines;
+    }
+
+    // Draw text
+    const setText = (e) => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // ctx.fillText(textElement.value, 0, 50);
+
+      const maxWidth = canvas.width;
+      const lineHeight = 30;
+      wrapText(ctx, textElement.value, 0, 50, maxWidth, lineHeight);
+    }
+
+    // textElement.onchange = setText;
+    textElement.onkeyup = setText;
+  </script>
+</body>
+
+</html>
