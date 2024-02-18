@@ -1,50 +1,88 @@
 :root {
-  color-scheme: dark light;
-
   /* Fonts */
-  --font-stack-didone: Didot, 'Bodoni MT', 'Noto Serif Display',
-    'URW Palladio L', P052, Sylfaen, serif;
-  --font-system-ui: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-serif-stack: Iowan Old Style, Apple Garamond, Baskerville,
+    Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --font-sans-serif-stack: -apple-system, BlinkMacSystemFont, avenir next,
+    avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+    arial, sans-serif;
+  --font-mono-stack: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
 
-  --color-white: hsla(0, 0%, 100%, 1);
-  --color-black: hsla(0, 0%, 0%, 1);
+  --color-white: #ffffff;
+  --color-black: #000000;
 
-  --light-color-background: hsla(51, 3%, 92%, 1);
-  --light-color-primary: hsla(54, 6%, 33%, 1);
-  --light-color-secondary: hsla(48, 3%, 57%, 1);
+  --color-primary: #3a3a3a;
+  --color-secondary: #c4c4c4;
+  --font-size-xlarge: 60px;
+  --font-size-large: 30px;
+  --font-size-medium: 16px;
+  --font-size-small: 14px;
+  --font-size-xsmall: 12px;
 
-  --dark-color-background: hsla(40, 10%, 12%, 1);
-  --dark-color-primary: hsla(53, 11%, 45%, 1);
-  --dark-color-secondary: hsla(60, 5%, 37%, 1);
+  --color-gradient-primary: linear-gradient(#cae7ea, #d1e7de);
 }
 
 body {
-  background-color: var(--light-color-background);
-  color: var(--light-color-primary);
-  font-family: var(--font-system-ui);
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  font-family: var(--font-sans-serif-stack);
+  /* font-family: var(--font-serif-stack); */
+  font-size: var(--font-size-medium);
+}
+
+.font-size-xlarge {
+  font-size: var(--font-size-xlarge);
+}
+.font-size-large {
+  font-size: var(--font-size-large);
+}
+.font-size-medium {
+  font-size: var(--font-size-medium);
+}
+.font-size-small {
+  font-size: var(--font-size-small);
+}
+.font-size-xsmall {
+  font-size: var(--font-size-xsmall);
+}
+.font-weight-semi-bold {
+  font-weight: semi-bold;
+}
+.font-weight-bold {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
 }
 
 .color-secondary {
-  color: var(--light-color-secondary);
+  color: var(--color-secondary);
+}
+.color-gradient-primary {
+  background: var(--color-gradient-primary);
+  background-clip: text;
+  color: transparent;
+}
+.bg-color-gradient-primary {
+  background: var(--color-gradient-primary);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark-color-background);
-    color: var(--dark-color-primary);
-  }
-  .color-secondary {
-    color: var(--dark-color-secondary);
-  }
+.font-serif {
+  font-family: var(--font-serif-stack);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: var(--font-stack-didone);
+.font-sans-serif {
+  font-family: var(--font-sans-serif-stack);
+}
+
+.font-mono {
+  font-family: var(--font-mono-stack);
 }
 
 img {
@@ -62,43 +100,4 @@ img {
 
 .text-center {
   text-align: center;
-}
-
-@keyframes parallax {
-  to {
-    transform: translateY(calc(var(--parallax-speed) * 200px));
-  }
-}
-
-.parallax {
-  position: relative;
-  display: grid;
-  grid-template-areas: 'stack';
-  min-height: 50vh;
-}
-
-.parallax > * {
-  grid-area: stack;
-  animation: parallax linear;
-  animation-timeline: scroll();
-  --parallax-speed: 1;
-}
-
-.parallax-background {
-  z-index: 0;
-  --parallax-speed: 1;
-}
-
-.parallax-foreground {
-  text-shadow: 0 2px 1rem var(--color-white);
-  z-index: 1;
-  --parallax-speed: 4;
-}
-
-.parallax-up {
-  --parallax-speed: -4;
-}
-
-.mb-large {
-  margin-bottom: 100px;
 }
