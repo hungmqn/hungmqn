@@ -30,7 +30,6 @@ body {
   background-color: var(--color-white);
   color: var(--color-primary);
   font-family: var(--font-sans-serif-stack);
-  /* font-family: var(--font-serif-stack); */
   font-size: var(--font-size-medium);
 }
 
