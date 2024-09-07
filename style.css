@@ -25,6 +25,8 @@
   --color-gradient-primary: linear-gradient(#cae7ea, #d1e7de);
 
   --color-link: #0866ff;
+
+  scroll-behavior: smooth;
 }
 
 body {
@@ -182,7 +184,7 @@ img {
   background-color: var(--background-color-dark);
 }
 
-.responsive {
+.footer-responsive {
   display: flex;
   justify-content: space-around;
   padding-top: 36px;
@@ -190,10 +192,18 @@ img {
 }
 
 @media (max-width: 480px) {
-  .responsive {
+  .footer-responsive {
     display: block;
   }
-  .responsive div {
+  .footer-responsive div {
     margin-bottom: 64px;
+    max-width: 80%;
+    margin: auto;
   }
+}
+
+.under-construction {
+  text-align: center;
+  padding-top: 25dvh;
+  padding-bottom: 25dvh;
 }
