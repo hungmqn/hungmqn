@@ -37,6 +37,7 @@ body {
   color: var(--color-primary);
   font-family: var(--font-sans-serif-stack);
   font-size: var(--font-size-medium);
+  font-weight: lighter;
 }
 
 h1,
