@@ -23,6 +23,7 @@
   --font-size-xsmall: 12px;
 
   --color-gradient-primary: linear-gradient(#cae7ea, #d1e7de);
+  --color-gradient-secondary: radial-gradient(#efefef, #efffff);
 
   --color-link: #0866ff;
 
@@ -89,6 +90,9 @@ a:hover {
 }
 .bg-color-gradient-primary {
   background: var(--color-gradient-primary);
+}
+.bg-color-gradient-secondary {
+  background: var(--color-gradient-secondary);
 }
 
 .font-serif {
@@ -207,4 +211,33 @@ img {
   text-align: center;
   padding-top: 25dvh;
   padding-bottom: 25dvh;
+}
+
+.album-list {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.album-item {
+  border-radius: 8px;
+}
+
+.album-item-name {
+  font-size: var(--font-size-large);
+}
+
+.album-item-thumb {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: all 1s;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.album-item-thumb:hover {
+  filter: contrast(80%);
 }
