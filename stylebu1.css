@@ -22,7 +22,7 @@
   font-display: swap;
 }
 
-  
+
 @font-face {
   font-family: 'Playfair Display Italic';
   src: url('/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
@@ -34,12 +34,35 @@
 
 @font-face {
   font-family: 'Space Mono';
-  src: url('/assets/fonts/SpaceMono-Bold.ttf') format('truetype supports variations');
+  src: url('/assets/fonts/SpaceMono-Regular.ttf') format('truetype ');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Space Mono Bold';
+  src: url('/assets/fonts/SpaceMono-Bold.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono Italic';
+  src: url('/assets/fonts/SpaceMono-Italic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono Bold Italic';
+  src: url('/assets/fonts/SpaceMono-BoldItalic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Fonts */
@@ -67,7 +90,7 @@
 
   scroll-behavior: smooth;
 }
-  
+
 body {
   min-height: 100dvh;
   margin: 0;
@@ -82,15 +105,19 @@ body {
 h1 {
   font-family: var(--font-heading);
 }
+
 h2 {
   font-family: var(--font-heading);
 }
+
 h3 {
   font-family: var(--font-heading);
 }
+
 h4 {
   font-family: var(--font-heading);
 }
+
 h5 {
   font-family: var(--font-heading);
 }
@@ -98,21 +125,27 @@ h5 {
 .font-size-xlarge {
   font-size: var(--font-size-xlarge);
 }
+
 .font-size-large {
   font-size: var(--font-size-large);
 }
+
 .font-size-medium {
   font-size: var(--font-size-medium);
 }
+
 .font-size-small {
   font-size: var(--font-size-small);
 }
+
 .font-size-xsmall {
   font-size: var(--font-size-xsmall);
 }
+
 .font-weight-semi-bold {
   font-weight: semi-bold;
 }
+
 .font-weight-bold {
   font-weight: bold;
 }
@@ -130,14 +163,17 @@ a:hover {
 .color-secondary {
   color: var(--color-secondary);
 }
+
 .color-gradient-primary {
   background: var(--color-gradient-primary);
   background-clip: text;
   color: transparent;
 }
+
 .bg-color-gradient-primary {
   background: var(--color-gradient-primary);
 }
+
 .bg-color-gradient-secondary {
   background: var(--color-gradient-secondary);
 }
@@ -176,29 +212,18 @@ img {
   --border-color: var(--color-primary);
   --border-width: 16px;
 
-  border: var(--border-thickness) solid #0000; /* space for the border */
+  border: var(--border-thickness) solid #0000;
+  /* space for the border */
   --_g: #0000 90deg, var(--border-color) 0;
   --_p: var(--border-width) var(--border-width) border-box no-repeat;
-  background: conic-gradient(
-        from 90deg at top var(--border-thickness) left var(--border-thickness),
-        var(--_g)
-      )
-      0 0 / var(--_p),
-    conic-gradient(
-        from 180deg at top var(--border-thickness) right var(--border-thickness),
-        var(--_g)
-      )
-      100% 0 / var(--_p),
-    conic-gradient(
-        from 0deg at bottom var(--border-thickness) left var(--border-thickness),
-        var(--_g)
-      )
-      0 100% / var(--_p),
-    conic-gradient(
-        from -90deg at bottom var(--border-thickness) right var(--border-thickness),
-        var(--_g)
-      )
-      100% 100% / var(--_p);
+  background: conic-gradient(from 90deg at top var(--border-thickness) left var(--border-thickness),
+      var(--_g)) 0 0 / var(--_p),
+    conic-gradient(from 180deg at top var(--border-thickness) right var(--border-thickness),
+      var(--_g)) 100% 0 / var(--_p),
+    conic-gradient(from 0deg at bottom var(--border-thickness) left var(--border-thickness),
+      var(--_g)) 0 100% / var(--_p),
+    conic-gradient(from -90deg at bottom var(--border-thickness) right var(--border-thickness),
+      var(--_g)) 100% 100% / var(--_p);
 
   /*Irrelevant code*/
   width: 80px;
@@ -247,6 +272,7 @@ img {
   .footer-responsive {
     display: block;
   }
+
   .footer-responsive div {
     margin-bottom: 64px;
     max-width: 80%;
@@ -333,4 +359,3 @@ img {
     grid-column: auto;
   }
 }
-  
