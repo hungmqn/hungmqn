@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hung Nguyen – Premium Velvet + Noise + Light Scan</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+      color: #eee;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* Velvet columns */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to right, #0f0f0f 0%, #0c0c0c 30%, #080808 100%);
+      background-size: 10vw 100vh;
+      background-repeat: repeat-x;
+    }
+
+    /* Heavy grain background */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='6'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E") 70px 70px;
+      mix-blend-mode: overlay;
+    }
+
+    /* Light scan animation across background */
+    .light-scan {
+      position: fixed;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: scan 12s linear infinite;
+    }
+
+    @keyframes scan {
+      0% {
+        background-position: -100% 0
+      }
+
+      100% {
+        background-position: 200% 0
+      }
+    }
+
+    /* Text with grain inside letters */
+    .hero {
+      position: relative;
+      z-index: 10;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 12vw, 14rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin: 0;
+      text-transform: uppercase;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='6'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.8'/%3E%3C/svg%3E") 70px 70px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      mix-blend-mode: screen;
+    }
+
+    .subtitle {
+      font-size: 1.8rem;
+      opacity: 0.8;
+      margin-top: 1rem;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='6'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E") 70px 70px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="light-scan"></div>
+
+  <div class="hero">
+    <h1>Hung Nguyen</h1>
+    <div class="subtitle">
+      Software Engineer<br>
+      Photographer
+    </div>
+  </div>
+
+</body>
+
+</html>

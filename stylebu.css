@@ -1,51 +1,13 @@
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/assets/fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Open Sans Italic';
-  src: url('/assets/fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Playfair Display Bold';
-  src: url('/assets/fonts/PlayfairDisplay-Bold-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-  
-@font-face {
-  font-family: 'Playfair Display Italic';
-  src: url('/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-
-@font-face {
-  font-family: 'Space Mono';
-  src: url('/assets/fonts/SpaceMono-Bold.ttf') format('truetype supports variations');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-
 :root {
   /* Fonts */
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Open Sans', sans-serif;
-  --font-mono: 'Space Mono', monospace;
+  --font-serif-stack: Iowan Old Style, Apple Garamond, Baskerville,
+    Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --font-sans-serif-stack: -apple-system, BlinkMacSystemFont, avenir next,
+    avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+    arial, sans-serif;
+  --font-mono-stack: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
 
   --background-color-dark: #303030;
 
@@ -67,32 +29,24 @@
 
   scroll-behavior: smooth;
 }
-  
+
 body {
   min-height: 100dvh;
   margin: 0;
   padding: 0;
   background-color: var(--color-white);
   color: var(--color-primary);
-  font-family: var(--font-body);
+  font-family: var(--font-sans-serif-stack);
   font-size: var(--font-size-medium);
-  font-optical-sizing: auto;
+  font-weight: lighter;
 }
 
-h1 {
-  font-family: var(--font-heading);
-}
-h2 {
-  font-family: var(--font-heading);
-}
-h3 {
-  font-family: var(--font-heading);
-}
-h4 {
-  font-family: var(--font-heading);
-}
+h1,
+h2,
+h3,
+h4,
 h5 {
-  font-family: var(--font-heading);
+  font-weight: lighter;
 }
 
 .font-size-xlarge {
@@ -143,11 +97,11 @@ a:hover {
 }
 
 .font-serif {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif-stack);
 }
 
 .font-sans-serif {
-  font-family: var(--font-body);
+  font-family: var(--font-sans-serif-stack);
 }
 
 .font-mono {
@@ -333,4 +287,3 @@ img {
     grid-column: auto;
   }
 }
-  
